@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>qr genrator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa&family=IBM+Plex+Mono:wght@100&family=Luxurious+Roman&display=swap" rel="stylesheet">
+    
+
+    <Style>
+        body{
+            width: 100%;
+            height: 600px;
+            margin: 0px 0px;
+            padding: 0px 0px;
+            
+            background-image: linear-gradient(rgb(137, 151, 124),rgb(70, 112, 119));
+        }
+        .container{
+            position: absolute;
+            width: 240px;
+            height: 260px;
+            left:700px;
+            top: 170px;
+            background: rgb(248, 245, 245);
+            border: 1px solid rgb(27, 27, 26);
+            border-radius: 10px;
+
+        }
+        img{
+            position: relative;
+            left: 29px;
+            top: 18px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+            
+        }
+        #input{
+            border: 1px solid black;
+            position: relative;
+            left: -1px;
+            width: 238px;
+            height: 40px;
+            font-size: 15px;
+            top: 80px;
+            border-radius: 5px;
+            word-wrap: break-word;
+            background-image: linear-gradient(white,rgb(234, 234, 240));
+        
+        }
+       #scan_qr{
+        position: relative;
+        background-image: linear-gradient(to right,rgb(238, 232, 232),rgb(247, 225, 225));
+        
+        width: 160px;
+        height: 36px;
+        border: 1px solid rgb(119, 119, 118);
+        font-size: 25px;
+        border-radius: 30px;
+        left: -150px;
+        top: 90px;
+       }       
+        #genrate_qr{
+            position: relative;
+            background-image: linear-gradient(to right,rgb(250, 246, 246),rgb(243, 212, 212));
+        
+        width: 160px;
+        height: 36px;
+        border: 1px solid rgb(133, 132, 130);
+        font-size: 25px;
+        border-radius: 30px;
+        top:54px;
+        left: 30px;
+        cursor: pointer;
+        }
+        #download{
+            position: relative;
+        background-image: linear-gradient(to right,rgb(235, 230, 230),rgb(238, 214, 214));
+        width: 160px;
+        height: 36px;
+        border: 1px solid gray;
+        
+        font-size: 25px;
+        border-radius:30px;
+        left: 215px;
+        top: 18px;
+        }
+        #download:hover{
+            background-image: linear-gradient(to right,rgb(61, 123, 128),rgb(133, 150, 61));
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            border: brown;
+            color: rgb(212, 216, 219);
+            cursor: pointer;
+            transition: 3s;
+        }
+        #genrate_qr:hover{
+            background-image: linear-gradient(to right,rgb(61, 123, 128),rgb(133, 150, 61));
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            border: brown;
+            color: rgb(212, 216, 219);
+            transition: 3s;
+        }
+        #scan_qr:hover{
+            background-image: linear-gradient(to right,rgb(61, 123, 128),rgb(133, 150, 61));
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            color: rgb(229, 232, 235);
+            border: brown;
+            cursor: pointer;
+            transition: 3s;
+        }
+        .result{
+        background-color: rgb(218, 233, 218);
+        color:rgb(202, 194, 194);
+        padding:20px;
+      }
+      .row{
+        position: absolute;
+        top: 190px;
+        left: 100px;
+        border-radius: 20px;
+        display: none;
+        
+      }
+      h4{
+          color: antiquewhite;
+          font-size: 25px;
+      }
+      #result{
+          color: antiquewhite;
+          font-size: 20px;
+      }
+      .navbar{
+          position: absolute;
+          top: -1px;
+          margin: 0px 0px;
+          width: 100%;
+          background-image: linear-gradient( to right ,rgb(209, 209, 183),rgb(180, 155, 155));
+          height: 56px;
+          
+      }
+      .left p{
+          position:relative;
+          width: 145px;
+          top: -23px;
+          display: inline-block;
+          margin-left: 24px;
+          font-size: 32px;
+          text-shadow: 2px 2px 2px rgb(87, 15, 94);
+           height: 39px;
+          text-align: center;
+          border-radius: 40px;
+          
+          color: antiquewhite;
+
+      }
+    p:hover{
+        position: relative;
+        width: 145px;
+        background: rgb(53, 50, 50);
+        color: antiquewhite;
+        border-radius: 100px;
+        height: 39px;
+        text-align: center;
+        cursor: pointer;
+        transition: 3s;
+
+
+    }
+    .rigth li{
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        left: 950px;
+        margin-right: 18px;
+        font-size: 32px;
+        top: -92px;
+        text-align: center;
+        width: 120px;
+        height: 39px;
+        text-shadow: 2px 2px 2px rgb(87, 15, 94);
+        
+        color: rgb(243, 232, 219);
+        border-radius: 50px;
+
+    }
+     li:hover{
+        background: rgb(41, 40, 40);
+        color: antiquewhite;
+        cursor: pointer;
+        transition: 3s;
+    }
+    #scan_qr a{
+        text-decoration: none;
+        color: rgb(17, 17, 16);
+    }
+    #o{
+        position: relative;
+        top:50px;
+        left: 50px;
+          font-size: 60px;
+          font-family: 'IBM Plex Mono', monospace;
+          color: rgb(205, 212, 209);
+          text-shadow: 2px 2px 2px  rgb(187, 187, 181);
+    }
+    #v{
+        position: relative;
+        font-family: 'IBM Plex Mono', monospace;
+        left: 34px;
+        font-size: 20px;
+        color: rgb(235, 235, 228);
+
+    }
+    #n{
+        position: relative;
+        top: 260px;
+        font-size: 25px;
+        font-family: 'IBM Plex Mono', monospace;
+        
+        left: 30px;
+    }
+    .rigth a{
+        text-decoration: none;
+        color: antiquewhite;
+    }
+    .left a{
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    </Style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="left">
+         <p id="p"><i class="fas fa-house-user"></i> home</p>
+         <p id="p"><i class="fab fa-servicestack"></i> service</p>
+         <p id="p"><i class="fa fa-phone-square-alt"> <a href="login.html"></i> contact </a></p>
+        </div>
+        
+        <div class="rigth">
+           <li id="l"><i class="fas fa-user"> <a href="login.html"></i> login</a></li>
+           <li id="l"><i class="fa fa-eject"> <a href="about.html"></i> about</a></li>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <img src="qr-6865526.png" alt="qrcode" width="180px" height="180px" id="qrcode">
+            <textarea id="input" name="w3review" rows="10" cols="50" placeholder="write something here"></textarea>
+             <button id="scan_qr"> <a href="scan.html"> Scan <i class="fas fa-camera"></i> </a></button>
+
+            <button id="genrate_qr">Genrate <i class="fas fa-qrcode"></i> </button>
+
+            <button id="download"> Download <i class="fas fa-download"></i> </button>
+            
+
+        </div>
+        
+    </div>
+    <h3 id="o"> !welcome</h3>
+    <h5 id="v"> keep your information in qr</h5>
+    <h6 id="n"> this site powered by API</h6>
+    <script src="logic.js"></script>
+    <script src="html5-qrcode.min.js"></script>
+    <div class="row">
+      <div class="col">
+        <div style="width:300px; height: 200px;"  id="reader"></div>
+      </div>
+      <div class="col" style="padding:30px;">
+        <h4>SCAN RESULT</h4>
+        <hr>
+        <div id="result">Result Here</div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    function onScanSuccess(qrCodeMessage) {
+        document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+    }
+    function onScanError(errorMessage) {
+      //handle scan error
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
+
+
+</body>
+</html>
